@@ -1,0 +1,113 @@
+:root {
+  --color-black-l: 5%;
+  --color-white-l: 95%;
+  --color-l1-l: calc(var(--color-black-l) + 15%);
+  --color-l2-l: calc(var(--color-l1-l) + 15%);
+  --color-l3-l: calc(var(--color-l2-l) + 15%);
+  --color-bg: hsl(0, 0%, var(--color-black-l));
+  --color-font: hsl(0, 0%, var(--color-white-l));
+  --color-font-hi: hsl(48, 100%, 50%);
+  --color-l1: hsl(0, 0%, var(--color-l1-l));
+  --color-l2: hsl(0, 0%, var(--color-l2-l));
+  --color-l3: hsl(0, 0%, var(--color-l3-l));
+  --size-font-smallest: 14px;
+  --size-font-small: calc(var(--size-font-smallest) + 3px);
+  --size-font: calc(var(--size-font-small) + 3px);
+  --size-font-large: calc(var(--size-font) + 3px);
+  --size-font-largest: calc(var(--size-font-large) + 3px);
+  --size-radius: calc(var(--size-font) * 2);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-font);
+  font-family: sans-serif;
+  font-size: var(--size-font);
+  line-height: 1.8em;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding-top: var(--size-font);
+}
+
+a {
+  color: var(--color-font);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-font-hi);
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  height: 100vh;
+}
+
+#face, #footer {
+  padding: calc(var(--size-font));
+}
+#header {
+  position: fixed;
+  width: 100%;
+  max-width: 1280px;
+  text-align: right;
+}
+#face {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+}
+#footer {
+  font-size: var(--size-font-smallest);
+  text-align: center;
+}
+#footer a {
+  margin-left: var(--size-font);
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.logo {
+  font-size: var(--size-font-largest);
+}
+.logo p {
+  font-size: var(--size-font-small);
+  margin-top: var(--size-font-small);
+  text-align: right;
+  padding: 0;
+}
+
+.icon {
+  min-width: var(--size-font-largest);
+  margin: calc(var(--size-font) / 2);
+}
+
+.button {
+  background-color: var(--color-l2);
+  padding: calc(var(--size-font) / 2);
+  border-radius: var(--size-radius);
+  cursor: pointer;
+}
+
+.button:hover {
+  filter: brightness(2);
+}
